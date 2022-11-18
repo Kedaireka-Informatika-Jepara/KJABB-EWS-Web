@@ -2,7 +2,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Data Payment</h1>
+    <h1 class="h3 mb-4 text-gray-800">Data Pembayaran</h1>
 
     <!-- /.container-fluid -->
     <div class="card shadow mb-4">
@@ -14,7 +14,7 @@
                             <tr>
                                 <th>Email</th>
                                 <th>Bukti</th>
-                                <th>Date/Time</th>
+                                <th>Tanggal/Waktu</th>
                                 <th>Status</th>
                                 <th>Aksi</th>
                             </tr>
@@ -26,17 +26,17 @@
                                     <td><img width="50px" src="<?= base_url(); ?>bukti/<?php echo $row->bukti; ?>" data-toggle="modal" data-target="#imageModal<?= $row->id; ?>"></td>
                                     <td><?php echo $row->datetime ?></td>
                                     <?php if ($row->status == 1) { ?>
-                                        <td><span class="badge badge-pill badge-success">Confirmed</span></td>
+                                        <td><span class="badge badge-pill badge-success">Terkonfirmasi</span></td>
                                     <?php } else { ?>
-                                        <td><span class="badge badge-pill badge-danger">Not Confirmed</span></td>
+                                        <td><span class="badge badge-pill badge-danger">Belum Terkonfirmasi</span></td>
                                     <?php } ?>
                                     <td>
                                         <?php if ($row->status == 1) { ?>
-                                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#formUnconfirm<?= $row->id; ?>"><i class="fas fa-times"></i> Unconfirm</button>
+                                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#formUnconfirm<?= $row->id; ?>"><i class="fas fa-times"></i> Batalkan</button>
                                         <?php } else { ?>
-                                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#formConfirm<?= $row->id; ?>"><i class="fas fa-check"></i> Confirm</button>
+                                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#formConfirm<?= $row->id; ?>"><i class="fas fa-check"></i> Konfirmasi</button>
                                         <?php } ?>
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#formDelete<?= $row->id; ?>"><i class="far fa-trash-alt"></i> Delete</button>
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#formDelete<?= $row->id; ?>"><i class="far fa-trash-alt"></i> Hapus</button>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -56,7 +56,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="hasilModal">Delete?</h5>
+                        <h5 class="modal-title" id="hasilModal">Hapus?</h5>
                         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
@@ -64,10 +64,10 @@
                     <div class="modal-body">
                         <input type="hidden" value="<?= $row->id; ?>" name="id" id="id" class="form-control">
                         <input type="hidden" value="<?= $row->bukti; ?>" name="bukti" id="bukti">
-                        <p>Are you sure want to delete this payment?</p>
+                        <p>Apakah anda yakin untuk menghapus data pembayaran ini?<p>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-danger" value="Delete">Delete</button>
+                        <button type="submit" class="btn btn-danger" value="Delete">Hapus</button>
                     </div>
                 </div>
             </div>
@@ -82,7 +82,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="hasilModal">Unconfirm this payment?</h5>
+                        <h5 class="modal-title" id="hasilModal">Batalkan pembayaran ini?</h5>
                         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
@@ -90,10 +90,10 @@
                     <div class="modal-body">
                         <input type="hidden" value="<?= $row->id; ?>" name="id" id="id">
                         <input type="hidden" value="0" name="status" id="status">
-                        <p>Are you sure want to unconfirm this payment?</p>
+                        <p>Apakah anda yakin untuk membatalkan pembayaran ini?</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-warning" value="Unconfirm">Unconfirm</button>
+                        <button type="submit" class="btn btn-warning" value="Unconfirm">Batalkan Konfirmasi</button>
                     </div>
                 </div>
             </div>
@@ -108,7 +108,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="hasilModal">Confirm this payment?</h5>
+                        <h5 class="modal-title" id="hasilModal">Konfirmasi pembayaran ini?</h5>
                         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
@@ -116,10 +116,10 @@
                     <div class="modal-body">
                         <input type="hidden" value="<?= $row->id; ?>" name="id" id="id">
                         <input type="hidden" value="1" name="status" id="status">
-                        <p>Are you sure want to confirm this payment?</p>
+                        <p>Apakah anda yakin untuk mengonfirmasi data pembayaran ini?</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success" value="Confirm">Confirm</button>
+                        <button type="submit" class="btn btn-success" value="Confirm">Konfirmasi</button>
                     </div>
                 </div>
             </div>
