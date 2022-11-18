@@ -20,14 +20,14 @@
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url('Admin/Datauser'); ?>">
             <i class="fas fa-fw fa-users"></i>
-            <span>Data User</span></a>
+            <span>Data Pengguna</span></a>
     </li>
 
     <!-- Nav Item - Admin -->
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url('Admin/Datapayment'); ?>">
             <i class="fas fa-fw fa-money-bill-wave"></i>
-            <span>Data Payment</span></a>
+            <span>Data Pembayaran</span></a>
     </li>
 
 
@@ -48,20 +48,20 @@
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url('Admin/Datataxa'); ?>">
             <i class="fas fa-fw fa-bacterium"></i>
-            <span>Data Family Biotic</span></a>
+            <span>Data Keluarga Biotik</span></a>
     </li>
 
     <!-- Nav Item - Jaringan -->
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url('Admin/Datastation'); ?>">
             <i class="fas fa-fw fa-flask"></i>
-            <span>Data Station</span></a>
+            <span>Data Lingkungan</span></a>
     </li>
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
     <div class="sidebar-heading">
-        Main
+        Member
     </div>
 
     <!-- Nav Item - Admin -->
@@ -76,7 +76,7 @@
     <li class="nav-item">
         <a class="nav-link" href="<?= base_url('Admin/Data'); ?>">
             <i class="fas fa-fw fa-database"></i>
-            <span>Input History</span></a>
+            <span>Histori Pengisian</span></a>
     </li>
 
     <!-- Divider -->
