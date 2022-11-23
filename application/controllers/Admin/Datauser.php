@@ -2,7 +2,7 @@
 
 use FontLib\Table\Type\post;
 
-defined('BASEPATH') or exit('No direct script access allowed');
+defined('BASEPATH') or exit('Tidak ada akses skrip langsung yang diizinkan');
 
 class Datauser extends CI_Controller
 {
@@ -12,7 +12,7 @@ class Datauser extends CI_Controller
         $this->load->library('form_validation');
         $this->load->model('System_model');
         if (!$this->session->userdata('email')) {
-            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Please Login first!</div>');
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Tolong masuk terlebih dahulu!</div>');
             redirect('Login');
         }
     }
@@ -37,17 +37,17 @@ class Datauser extends CI_Controller
     {
         $this->form_validation->set_rules('name', 'Name', 'required|trim');
         $this->form_validation->set_rules('email', 'Email', 'required|trim|is_unique[user.email]', [
-            'is_unique' => 'Email is already registered'
+            'is_unique' => 'Email telah berhasil terdaftar'
         ]);
         $this->form_validation->set_rules('role', 'Roles', 'required');
         $this->form_validation->set_rules('password1', 'Password', 'required|trim|matches[password2]|min_length[4]', [
-            'matches' => 'Password is not match',
-            'min_length' => 'Password too short'
+            'matches' => 'Password tidak sesuai!',
+            'min_length' => 'Password terlalu pendek!'
         ]);
         $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]|min_length[4]');
         $role_id = $this->input->post('role');
         if ($this->form_validation->run() == false) {
-            $this->session->set_flashdata('error', 'There was some error when inputting data');
+            $this->session->set_flashdata('error', 'Disini terjadi error saat memasukkan data');
             $this->index();
         } else {
             if ($role_id == 2) {
@@ -62,7 +62,7 @@ class Datauser extends CI_Controller
                     'membership' => $this->input->post('membership')
                 ];
                 $this->db->insert('user', $data);
-                $this->session->set_flashdata('success', 'New user has been added');
+                $this->session->set_flashdata('sukses', 'User baru berhasil ditambahkan');
                 redirect('Admin/Datauser');
             } else {
                 $data = [
@@ -76,7 +76,7 @@ class Datauser extends CI_Controller
                     'membership' => 4
                 ];
                 $this->db->insert('user', $data);
-                $this->session->set_flashdata('success', 'New user has been added');
+                $this->session->set_flashdata('sukses', 'User baru berhasil ditambahkan');
                 redirect('Admin/Datauser');
             }
         }
@@ -90,7 +90,7 @@ class Datauser extends CI_Controller
         $this->form_validation->set_rules('membership', 'Membership', 'required');
         $id = $this->input->post('id');
         if ($this->form_validation->run() == false) {
-            $this->session->set_flashdata('error', 'There was some error when editing data');
+            $this->session->set_flashdata('error', 'Disini terjadi error saat memasukkan data');
             $this->index();
         } else {
             if ($this->form_validation->run()) {
@@ -102,7 +102,7 @@ class Datauser extends CI_Controller
                 ];
                 $this->db->where('id', $id);
                 $this->db->update('user', $data);
-                $this->session->set_flashdata('success', 'User data has been edited');
+                $this->session->set_flashdata('sukses', 'Data pengguna berhasil diubah');
                 redirect('Admin/Datauser');
             }
         }
@@ -113,7 +113,7 @@ class Datauser extends CI_Controller
         $id = $this->input->post('id');
         $this->db->where('id', $id);
         $this->db->delete('user');
-        $this->session->set_flashdata('success', 'User data has been deleted');
+        $this->session->set_flashdata('sukses', 'Data pengguna berhasil dihapus');
         redirect('Admin/Datauser');
     }
 
@@ -125,7 +125,7 @@ class Datauser extends CI_Controller
         ];
         $this->db->where('id', $id);
         $this->db->update('user', $data);
-        $this->session->set_flashdata('success', 'User has been deactivated');
+        $this->session->set_flashdata('sukses', 'Data pengguna berhasil dinonaktifkan');
         redirect('Admin/Datauser');
     }
 
@@ -137,7 +137,7 @@ class Datauser extends CI_Controller
         ];
         $this->db->where('id', $id);
         $this->db->update('user', $data);
-        $this->session->set_flashdata('success', 'User has been activated');
+        $this->session->set_flashdata('sukses', 'Data pengguna berhasil diaktifkan');
         redirect('Admin/Datauser');
     }
 }

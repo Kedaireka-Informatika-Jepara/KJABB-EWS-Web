@@ -8,7 +8,7 @@
     <div class="card shadow mb-4">
         <div class="card-body">
             <div class="row mb-3">
-                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#formTambah"><i class="fas fa-plus"></i> Add</button>
+                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#formTambah"><i class="fas fa-plus"></i> Tambah</button>
             </div>
             <div class="row mb-3">
                 <div class="table-responsive">
@@ -18,7 +18,7 @@
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Email</th>
-                                <th>Role</th>
+                                <th>Tipe Pengguna</th>
                                 <th>Membership</th>
                                 <th>Status</th>
                                 <th>Aksi</th>
@@ -33,17 +33,17 @@
                                     <td><?php echo $row->role ?></td>
                                     <td><?php echo $row->status ?></td>
                                     <?php if ($row->is_active == 1) { ?>
-                                        <td><span class="badge badge-pill badge-success">Active</span></td>
+                                        <td><span class="badge badge-pill badge-success">Aktif</span></td>
                                     <?php } else { ?>
-                                        <td><span class="badge badge-pill badge-danger">Not Active</span></td>
+                                        <td><span class="badge badge-pill badge-danger">Tidak Aktif</span></td>
                                     <?php } ?>
                                     <td>
                                         <?php if ($row->is_active == 1) { ?>
-                                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#formDeactivate<?= $row->id; ?>"><i class="fas fa-lock"></i> Deactivate</button>
+                                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#formDeactivate<?= $row->id; ?>"><i class="fas fa-lock"></i> Nonaktifkan</button>
                                         <?php } else { ?>
-                                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#formActivate<?= $row->id; ?>"><i class="fas fa-lock-open"></i> Activate</button>
+                                            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#formActivate<?= $row->id; ?>"><i class="fas fa-lock-open"></i> Aktifkan</button>
                                         <?php } ?>
-                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#formDelete<?= $row->id; ?>"><i class="far fa-trash-alt"></i> Delete</button>
+                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#formDelete<?= $row->id; ?>"><i class="far fa-trash-alt"></i> Hapus</button>
                                         <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#formEdit<?= $row->id; ?>"><i class="fas fa-edit"></i> Edit</button>
                                     </td>
                                 </tr>
@@ -89,7 +89,7 @@
                     </div>
                     <div class="form-group">
                         <select class="form-control" name="role" id="role">
-                            <option selected disabled hidden>Choose Role</option>
+                            <option selected disabled hidden>Pilih Tipe Pengguna</option>
                             <option value="1">Admin</option>
                             <option value="2">Member</option>
                             <option value="3">Operator</option>
@@ -98,15 +98,15 @@
                     </div>
                     <div class="form-group" id="membershipDiv">
                         <select class="form-control" name="membership" id="membership">
-                            <option selected disabled hidden>Choose Membership</option>
-                            <option value="1">Trial</option>
-                            <option value="2">Monthly</option>
-                            <option value="3">Annual</option>
+                            <option selected disabled hidden>Pilih Membership</option>
+                            <option value="1">Percobaan</option>
+                            <option value="2">Bulanan</option>
+                            <option value="3">Tahunan</option>
                         </select>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-success" value="Add">Add</button>
+                    <button type="submit" class="btn btn-success" value="Add">Tambah</button>
                 </div>
             </div>
         </div>
@@ -137,7 +137,7 @@
                         </div>
                         <div class="form-group">
                             <select class="form-control" name="role" id="role">
-                                <option selected disabled hidden>Choose Role</option>
+                                <option selected disabled hidden>Pilih Tipe Pengguna</option>
                                 <option value="1" <?php if ($row->role_id == 1) echo 'selected="selected"'; ?>>Admin</option>
                                 <option value="2" <?php if ($row->role_id == 2) echo 'selected="selected"'; ?>>Member</option>
                                 <option value="3" <?php if ($row->role_id == 3) echo 'selected="selected"'; ?>>Operator</option>
@@ -147,9 +147,9 @@
                         <div class="form-group" id="membershipDiv">
                             <select class="form-control" name="membership" id="membership">
                                 <option selected disabled hidden>Choose Membership</option>
-                                <option value="1" <?php if ($row->membership == 1) echo 'selected="selected"'; ?>>Trial</option>
-                                <option value="2" <?php if ($row->membership == 2) echo 'selected="selected"'; ?>>Monthly</option>
-                                <option value="3" <?php if ($row->membership == 3) echo 'selected="selected"'; ?>>Annual</option>
+                                <option value="1" <?php if ($row->membership == 1) echo 'selected="selected"'; ?>>Percobaan</option>
+                                <option value="2" <?php if ($row->membership == 2) echo 'selected="selected"'; ?>>Bulanan</option>
+                                <option value="3" <?php if ($row->membership == 3) echo 'selected="selected"'; ?>>Tahunan</option>
                                 <option value="3" <?php if ($row->membership == 4) echo 'selected="selected"'; ?>>Admin/Operator</option>
                             </select>
                         </div>
@@ -171,17 +171,17 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="hasilModal">Delete?</h5>
+                        <h5 class="modal-title" id="hasilModal">Hapus?</h5>
                         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <input type="hidden" value="<?= $row->id; ?>" name="id" id="id" class="form-control">
-                        <p>Are you sure want to delete this user?</p>
+                        <p>Apakah anda yakin menghapus data user ini?</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-danger" value="Delete">Delete</button>
+                        <button type="submit" class="btn btn-danger" value="Delete">Hapus</button>
                     </div>
                 </div>
             </div>
@@ -196,7 +196,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="hasilModal">Deactivate this account?</h5>
+                        <h5 class="modal-title" id="hasilModal">Nonaktifkan akun ini?</h5>
                         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
@@ -204,10 +204,10 @@
                     <div class="modal-body">
                         <input type="hidden" value="<?= $row->id; ?>" name="id" id="id">
                         <input type="hidden" value="0" name="is_active" id="is_active">
-                        <p>Are you sure want to deactivate this account?</p>
+                        <p>Apakah kamu yakin ingin menonaktifkan akun ini?<p>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-warning" value="Nonactive">Deactivate</button>
+                        <button type="submit" class="btn btn-warning" value="Nonactive">Nonaktifkan</button>
                     </div>
                 </div>
             </div>
@@ -222,7 +222,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="hasilModal">Activate this account?</h5>
+                        <h5 class="modal-title" id="hasilModal">Aktivasi akun ini?</h5>
                         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
@@ -230,10 +230,10 @@
                     <div class="modal-body">
                         <input type="hidden" value="<?= $row->id; ?>" name="id" id="id">
                         <input type="hidden" value="1" name="is_active" id="is_active">
-                        <p>Are you sure want to activate this account?</p>
+                        <p>Apakah anda yakin untuk mengaktifkan data ini?</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="submit" class="btn btn-success" value="Activate">Activate</button>
+                        <button type="submit" class="btn btn-success" value="Activate">Aktivasi</button>
                     </div>
                 </div>
             </div>

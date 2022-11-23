@@ -18,15 +18,15 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="logoutModal">Logout</h5>
+                    <h5 class="modal-title" id="logoutModal">Keluar</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Are you sure you want to Logout?</div>
+                <div class="modal-body">Apakah anda yakin ingin keluar?</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="<?= base_url('Login/logout'); ?>">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                    <a class="btn btn-primary" href="<?= base_url('Login/logout'); ?>">Keluar</a>
                 </div>
             </div>
         </div>
@@ -38,7 +38,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="userConf">Change Password</h5>
+                        <h5 class="modal-title" id="userConf">Ubah Password</h5>
                         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>
@@ -46,27 +46,27 @@
                     <div class="modal-body">
                         <input type="hidden" value="<?= $user['id']; ?>" id="id" name="id">
                         <div class="form-group">
-                            <label class="col-form-label" for="user">Name:</label>
+                            <label class="col-form-label" for="user">Nama:</label>
                             <input type="text" class="form-control" value="<?= $user['name']; ?>" id="name" name="name" disabled>
                         </div>
                         <div class="form-group">
-                            <label class="col-form-label" for="oldpassword">Old Password:</label>
+                            <label class="col-form-label" for="oldpassword">Password Lama:</label>
                             <input type="password" class="form-control" id="oldpassword" name="oldpassword">
                             <?= form_error('oldpassword', '<small class="text-danger">', '</small>'); ?>
                         </div>
                         <div class="form-group">
-                            <label class="col-form-label" for="newpassword1">New Password:</label>
+                            <label class="col-form-label" for="newpassword1">Password Baru:</label>
                             <input type="password" class="form-control" id="newpassword1" name="newpassword1">
                             <?= form_error('password1', '<small class="text-danger">', '</small>'); ?>
                         </div>
                         <div class="form-group">
-                            <label class="col-form-label" for="newpassword2">Confirm Password:</label>
+                            <label class="col-form-label" for="newpassword2">Konfirmasi Password:</label>
                             <input type="password" class="form-control" id="newpassword2" name="newpassword2">
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                        <button class="btn btn-success" type="submit" value="ChangePassword">Change</button>
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                        <button class="btn btn-success" type="submit" value="ChangePassword">Ubah</button>
                     </div>
                 </div>
             </div>
