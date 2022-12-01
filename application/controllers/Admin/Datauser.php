@@ -24,8 +24,8 @@ class Datauser extends CI_Controller
             $data['user'] = $this->db->get_where('user', ['email' => $this->session->userdata('email')])->row_array();
             $data['member'] = $this->System_model->get_user();
             $this->load->view('templates/main_header', $data);
-            $this->load->view('templates/admin_sidebar', $data);
             $this->load->view('templates/main_topbar', $data);
+            $this->load->view('templates/admin_sidebar', $data);
             $this->load->view('admin/datauser', $data);
             $this->load->view('templates/main_footer', $data);
         } else {
