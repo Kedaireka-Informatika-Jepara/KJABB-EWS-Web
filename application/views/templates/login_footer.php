@@ -1,12 +1,8 @@
 <!-- Bootstrap core JavaScript-->
-<script src="<?= base_url('assets/'); ?>vendor/jquery/jquery.min.js"></script>
-<script src="<?= base_url('assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Core plugin JavaScript-->
-<script src="<?= base_url('assets/'); ?>vendor/jquery-easing/jquery.easing.min.js"></script>
-
-<!-- Custom scripts for all pages-->
-<script src="<?= base_url('assets/'); ?>js/sb-admin-2.min.js"></script>
+<script src="<?= base_url(); ?>assets/js/vendor/jquery-3.3.1.min.js" style="opacity: 1;"></script>
+<script src="<?= base_url(); ?>assets/js/vendor/bootstrap.bundle.min.js" style="opacity: 1;"></script>
+<script src="<?= base_url(); ?>assets/js/dore.script.js" style="opacity: 1;"></script>
+<script src="<?= base_url(); ?>assets/js/scripts.js" style="opacity: 1;"></script>
 
 </body>
 

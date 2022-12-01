@@ -160,7 +160,7 @@
                 <a class="dropdown-item" href="#">Features</a>
                 <a class="dropdown-item" href="#">History</a>
                 <a class="dropdown-item" href="#">Support</a>
-                <a class="dropdown-item" href="#">Sign out</a>
+                <a class="dropdown-item" href="<?= base_url('Login/logout'); ?>">Sign out</a>
             </div>
         </div>
     </div>

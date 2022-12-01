@@ -45,17 +45,17 @@
     <div class="sub-menu">
         <div class="scroll">
             <ul class="list-unstyled" data-link="dashboard">
-                <li class="active">
-                    <a href="Dashboard.Default.html">
+                <li>
+                    <a href="<?= base_url('Admin/Datauser'); ?>">
                         <i class="simple-icon-rocket"></i> <span class="d-inline-block">Data Pengguna</span>
                     </a>
                 </li>
                 <li>
-                    <a href="Dashboard.Analytics.html">
+                    <a href="<?= base_url('Admin/Datapayment'); ?>">
                         <i class="simple-icon-pie-chart"></i> <span class="d-inline-block">Data Pembayaran</span>
                     </a>
                 </li>
-                
+
                 <!-- <li>
                     <a href="Dashboard.Ecommerce.html">
                         <i class="simple-icon-basket-loaded"></i> <span class="d-inline-block">Ecommerce</span>
@@ -68,18 +68,18 @@
                 </li> -->
             </ul>
             <ul class="list-unstyled" data-link="layouts" id="layouts">
-                <li class="active">
-                    <a href="Dashboard.Default.html">
+                <li>
+                    <a href="<?= base_url('Admin/Dataweight'); ?>">
                         <i class="simple-icon-rocket"></i> <span class="d-inline-block">Data Bobot</span>
                     </a>
                 </li>
                 <li>
-                    <a href="Dashboard.Analytics.html">
+                    <a href="<?= base_url('Admin/Datataxa'); ?>">
                         <i class="simple-icon-pie-chart"></i> <span class="d-inline-block">Data Keluarga Biotik</span>
                     </a>
                 </li>
                 <li>
-                    <a href="Dashboard.Analytics.html">
+                    <a href="<?= base_url('Admin/Datastation'); ?>">
                         <i class="simple-icon-pie-chart"></i> <span class="d-inline-block">Data Lingkungan</span>
                     </a>
                 </li>

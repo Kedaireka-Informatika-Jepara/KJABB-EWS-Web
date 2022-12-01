@@ -1,3 +1,4 @@
+<main>
 <style>
     /* Chrome, Safari, Edge, Opera */
     input::-webkit-outer-spin-button,
@@ -144,3 +145,4 @@
         $('#dataTable').DataTable();
     });
 </script>
+</main>
