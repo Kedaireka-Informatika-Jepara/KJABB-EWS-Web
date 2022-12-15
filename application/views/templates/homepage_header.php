@@ -53,7 +53,7 @@
                     <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
                     <li><a class="nav-link scrollto" href="#faq">F.A.Q</a></li>
                     <li><a class="getstarted" href="<?= base_url('login/registration'); ?>">Sign Up</a></li>
-                    <li><a class="getstarted" href="<?= base_url('login'); ?>">Sign In</a></li>
+                    <li><a class="getstarted" href="<?= base_url('login/'); ?>">Sign In</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
